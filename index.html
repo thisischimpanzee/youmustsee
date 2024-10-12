@@ -5,50 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surprise</title>
     <style>
+        /* Center the content vertically and horizontally */
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Full height of viewport */
-            margin: 0; /* Remove default margin */
-            background-color: #f0f0f0; /* Light background */
-            font-family: Arial, sans-serif; /* Set font */
-            text-align: center;
+            min-height: 100vh; /* Full height */
+            margin: 0;
+            background-color: #f5f5f5; /* Optional: Add a light background color */
+            text-align: center; /* Center text */
         }
-        .container {
-            max-width: 600px; /* Limit width for large screens */
-            padding: 20px;
+
+        h1 {
+            margin-bottom: 50px; /* Space below heading */
         }
-        button, a {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 18px;
-            border-radius: 5px;
-            border: none;
-            background-color: #ff7043; /* Button color */
-            color: white;
-            cursor: pointer;
-            text-decoration: none;
+
+        .icon-container {
+            display: flex;
+            justify-content: space-between;
+            width: 300px; /* Adjust this width if needed */
         }
-        button:hover, a:hover {
-            background-color: #ff5722; /* Button hover effect */
-        }
-        img {
-            width: 50px; /* Icon size */
-            height: auto;
+
+        .icon {
+            width: 100px; /* Set a fixed width for icons */
+            height: auto; /* Maintain aspect ratio */
+            cursor: pointer; /* Change cursor on hover */
         }
     </style>
+    <script>
+        function confirmClose() {
+            const confirmation = confirm("Are you sure you want to close the page?");
+            if (confirmation) {
+                window.open('', '_self', ''); // Some browsers might still require this for window.close
+                window.close();
+            }
+        }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Hi Sean, wanna see something sexy?</h1>
+    <h1>Hi Sean, wanna see something sexy?</h1>
+
+    <!-- Container to hold both icons side by side -->
+    <div class="icon-container">
+        <!-- Icon for continue on the left -->
         <a href="gotcha.html">
-            <img src="iconA.png" alt="Continue">
+            <img src="continue.png" alt="Continue" class="icon">
         </a>
-        <button onclick="window.close()">
-            <img src="iconB.png" alt="Close">
-        </button>
+
+        <!-- Icon for close on the right -->
+        <img src="close.png" alt="Close" class="icon" onclick="confirmClose()">
     </div>
 </body>
 </html>
