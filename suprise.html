@@ -25,6 +25,20 @@
             max-width: 90%; /* Responsive image width */
             height: auto; /* Maintain aspect ratio */
         }
+
+        #playButton {
+            display: none; /* Hidden by default, shown on iOS */
+            margin-top: 20px; /* Add some space above the button */
+            border: none; /* Remove button border */
+            background: none; /* Remove button background */
+            cursor: pointer; /* Show pointer cursor on hover */
+        }
+
+        /* Style the play button image */
+        #playButton img {
+            width: 50px; /* Set a fixed width */
+            height: auto; /* Maintain aspect ratio */
+        }
     </style>
 </head>
 <body>
@@ -38,5 +52,28 @@
         <source src="happy-birthday-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+
+    <!-- Button for iPhone Safari users -->
+    <button id="playButton" onclick="playMusic()">
+        <img src="playmusic.png" alt="Play Music">
+    </button>
+
+    <script>
+        function playMusic() {
+            var music = document.getElementById('birthdayMusic');
+            music.play();
+            document.getElementById('playButton').style.display = 'none'; // Hide the button after playing
+        }
+
+        // Check if the browser is on iOS (iPhone/iPad)
+        var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        // If iOS, prevent auto-play and show the manual play button
+        if (isIOS) {
+            var music = document.getElementById('birthdayMusic');
+            music.autoplay = false;
+            document.getElementById('playButton').style.display = 'block'; // Show the button
+        }
+    </script>
 </body>
 </html>
