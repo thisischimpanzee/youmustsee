@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of viewport */
+            margin: 0; /* Remove default margin */
+            background-color: #f0f0f0; /* Light background */
+            font-family: Arial, sans-serif; /* Set font */
+            text-align: center;
+        }
+        .container {
+            max-width: 600px; /* Limit width for large screens */
+            padding: 20px;
+        }
+        button, a {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ff7043; /* Button color */
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        button:hover, a:hover {
+            background-color: #ff5722; /* Button hover effect */
+        }
+        img {
+            width: 50px; /* Icon size */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hi Sean, wanna see something sexy?</h1>
+        <a href="gotcha.html">
+            <img src="iconA.png" alt="Continue">
+        </a>
+        <button onclick="window.close()">
+            <img src="iconB.png" alt="Close">
+        </button>
+    </div>
+</body>
+</html>
