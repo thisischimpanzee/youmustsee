@@ -3,50 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday !</title>
+    <title>Happy Birthday</title>
     <style>
+        /* Center the content vertically and horizontally */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            height: 100vh;
+            min-height: 100vh; /* Full height */
             margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 600px;
-            padding: 20px;
+            flex-direction: column; /* Stack content vertically */
+            background-color: #f5f5f5; /* Optional: Add a light background color */
+            text-align: center; /* Center text */
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            margin: 20px 0; /* Margin around the heading */
         }
 
         img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
+            max-width: 90%; /* Responsive image width */
+            height: auto; /* Maintain aspect ratio */
         }
     </style>
 </head>
 <body>
+    <h1>Happy Birthday!</h1>
+    
+    <!-- Add the gif (happybirthday.GIF) -->
+    <img src="happybirthday.GIF" alt="Happy Birthday GIF">
 
-    <!-- Container to hold the content -->
-    <div class="container">
-        <h1>Happy Birthday!</h1>
-        <img src="happybirthday.GIF" alt="Birthday GIF">
-    </div>
-
-    <!-- Auto-play background music -->
-    <audio autoplay>
+    <!-- Auto-play music -->
+    <audio id="birthdayMusic" autoplay loop>
         <source src="happy-birthday-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
 </body>
 </html>
